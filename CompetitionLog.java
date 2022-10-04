@@ -1,4 +1,13 @@
-//fix coding style
+/**
+ * Competition Log
+ *
+ * This is a constructor for the competition log
+ *
+ * @author Rahul Menon, CS180
+ *
+ * @version 10/04/2022
+ *
+ */
 
 public class CompetitionLog{
     private int playerNumber;

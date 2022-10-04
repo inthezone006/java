@@ -1,8 +1,15 @@
 import java.util.Scanner;
 
-//fix coding style
-//fix sample test 3 winning sets
-//add complete and incomplete sets
+/**
+ * Lego Set Competition
+ *
+ * This stimulates a lego set competition
+ *
+ * @author Rahul Menon, CS180
+ *
+ * @version 10/04/2022
+ *
+ */
 
 public class LegoSetCompetition{
     public static void main(String[] args){
@@ -112,19 +119,19 @@ public class LegoSetCompetition{
         }
         
         if (repeated == true){
-            if (player1RELOADED <= 0){
+            if (player1RELOADED < 0){
                 winningPlayer = 1;    
             }
-            else if (player2RELOADED <= 0){
+            else if (player2RELOADED < 0){
                 winningPlayer = 2;    
             }
         }
         else {
-            if (player1 <= 0){
+            if (player1 < 0){
                 winningPlayer =  1;   
             }
         
-            else if (player2 <= 0){
+            else if (player2 < 0){
                 winningPlayer = 2;    
             }    
         }
@@ -138,7 +145,35 @@ public class LegoSetCompetition{
         String playerOneIncompletedSets = "None";
         String playerTwoIncompletedSets = "None";
         
+        if (completedPlayerOne > legoset1t){
+             if (completedPlayerOne > (legoset1t + legoset2t)) {
+                 if (completedPlayerOne > (legoset1t + legoset2t + legoset3t)){
+                     playerOneCompletedSets = legoset1 + ", " + legoset2 + ", " + legoset3;
+                     playerOneIncompletedSets = "None";
+                 }
+                 
+                 playerOneCompletedSets = legoset1 + ", " + legoset2;
+                 playerOneIncompletedSets = legoset3;
+             }
+            
+            playerOneCompletedSets = legoset1;
+            playerOneIncompletedSets = legoset2 + ", " + legoset3;
+        }
         
+        if (completedPlayerTwo > legoset1t){
+             if (completedPlayerTwo > (legoset1t + legoset2t)) {
+                 if (completedPlayerTwo > (legoset1t + legoset2t + legoset3t)){
+                     playerTwoCompletedSets = legoset1t + ", " + legoset2t + ", " + legoset3t;
+                     playerTwoIncompletedSets = "None";
+                 }
+                 
+                 playerTwoCompletedSets = legoset1 + ", " + legoset2;
+                 playerTwoIncompletedSets = legoset3;
+             }
+            
+            playerTwoCompletedSets = legoset1;
+            playerTwoIncompletedSets = legoset2 + ", " + legoset3;
+        }
         
         
         CompetitionLog playerOnep = new CompetitionLog(1, playerOneCompletedSets, playerOneIncompletedSets, completedPlayerOne);
