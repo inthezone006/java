@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 //fix coding style
 //fix sample test 3 winning sets
+//add complete and incomplete sets
 
 public class LegoSetCompetition{
     public static void main(String[] args){
