@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -194,6 +195,10 @@ public class LegoSetCompetition{
             player1incompleted = player1incompleted.substring(0, player1incompleted.length() - 2);
         }
 
+=======
+public class LegoSetCompetition(){
+    public static void main(String[] args){
+>>>>>>> d8ce904 (my changes)
         
         if(player2incompleted.isEmpty()){
             player2incompleted = "None";
