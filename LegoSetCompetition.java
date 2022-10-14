@@ -26,6 +26,14 @@ public class LegoSetCompetition{
 
         int days = 1;
 
+
+        ArrayList<String> allPlayerOneComplete = new ArrayList<String>();
+        ArrayList<String> allPlayerTwoComplete = new ArrayList<String>();
+        ArrayList<String> allPlayerOneIncomplete = new ArrayList<String>();
+        ArrayList<String> allPlayerTwoIncomplete = new ArrayList<String>();
+
+        
+
         while(gameOn){
             for (int u = 1; u < 4; u++){
                 System.out.println("Enter the name of Lego Set " + u);
@@ -53,25 +61,26 @@ public class LegoSetCompetition{
             while(gamePlay){
                 System.out.println("Enter the number of pieces player 1 used for building on day " + days);
                 player1game = player1game + scan.nextInt();
-                player1 = player1 + player1game;
+                //player1 = player1 + player1game;
                 System.out.println("Enter the number of pieces player 2 used for building on day " + days);
                 player2game = player2game + scan.nextInt();
-                player2 = player2 + player2game;
+                //player2 = player2 + player2game;
                 days++;
 
 
                 if (player1game >= total || player2game >= total){
                     gameOn = false;
-                
+                    player1 = player1 + player1game;
+                    player2 = player2 + player2game;
                     if (player1game >= pieces.get(0)){
                         player1complete.add(legosets.get(0));
                         player1incomplete.remove(0);
                         if (player1game >= pieces.get(0) + pieces.get(1)){
                             player1complete.add(legosets.get(1));
-                            player1incomplete.remove(1);
+                            player1incomplete.remove(0);
                             if (player1game >= pieces.get(0) + pieces.get(1) + pieces.get(2)){
                                 player1complete.add(legosets.get(2));
-                                player1incomplete.removeAll(player2incomplete);
+                                player1incomplete.remove(0);
                             }
                         } 
                     }
@@ -81,13 +90,30 @@ public class LegoSetCompetition{
                         player2incomplete.remove(0);
                         if (player2game >= pieces.get(0) + pieces.get(1)){
                             player2complete.add(legosets.get(1));
-                            player2incomplete.remove(1);
+                            player2incomplete.remove(0);
                             if (player2game >= pieces.get(0) + pieces.get(1) + pieces.get(2)){
                                 player2complete.add(legosets.get(2));
-                                player2incomplete.removeAll(player2incomplete);
+                                player2incomplete.remove(0);
                             }
                         } 
                     }
+
+                    for (int x = 0; x < player1complete.size(); x++){
+                        allPlayerOneComplete.add(player1complete.get(x));
+                    }
+
+                    for (int x = 0; x < player2complete.size(); x++){
+                        allPlayerTwoComplete.add(player2complete.get(x));
+                    }
+
+                    for (int x = 0; x < player1incomplete.size(); x++){
+                        allPlayerOneIncomplete.add(player1incomplete.get(x));
+                    }
+
+                    for (int x = 0; x < player2incomplete.size(); x++){
+                        allPlayerTwoIncomplete.add(player2incomplete.get(x));
+                    }
+
                 
                     if (player1game >= total){
                         //if player 1 wins
@@ -114,7 +140,9 @@ public class LegoSetCompetition{
                         legosets.removeAll(legosets);
                         pieces.removeAll(pieces);
                         player1complete.removeAll(player1complete);
-                        player2complete.removeAll(player2complete);  
+                        player2complete.removeAll(player2complete);
+                        player1incomplete.removeAll(player1incomplete);
+                        player2complete.removeAll(player2complete); 
                     }
                 }
             }
@@ -123,21 +151,21 @@ public class LegoSetCompetition{
 
             //formatting
 
-            for (int x = 0; x < player1complete.size(); x++){
-                player1completed = player1completed + player1complete.get(x) + ", ";
+            for (int x = 0; x < allPlayerOneComplete.size(); x++){
+                player1completed = player1completed + allPlayerOneComplete.get(x) + ", ";
             }
 
-            for (int y = 0; y < player2complete.size(); y++){
-                player2completed = player2completed + player2complete.get(y) + ", ";
+            for (int y = 0; y < allPlayerTwoComplete.size(); y++){
+                player2completed = player2completed + allPlayerTwoComplete.get(y) + ", ";
             }
 
-            for (int t = 0; t < player1incomplete.size(); t++){
-                player1incompleted = player1incompleted + player1incomplete.get(t) + ", ";
+            for (int t = 0; t < allPlayerOneIncomplete.size(); t++){
+                player1incompleted = player1incompleted + allPlayerOneIncomplete.get(t) + ", ";
             }
 
 
-            for (int x = 0; x < player2incomplete.size(); x++){
-                player2incompleted = player2incompleted + player2incomplete.get(x) + ", ";
+            for (int x = 0; x < allPlayerTwoIncomplete.size(); x++){
+                player2incompleted = player2incompleted + allPlayerTwoIncomplete.get(x) + ", ";
             }
         }
 
