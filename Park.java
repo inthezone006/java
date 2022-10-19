@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public interface Park {
     public void addRide(Ride ride) throws WrongRideException;
     public void close();

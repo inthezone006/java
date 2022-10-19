@@ -24,8 +24,13 @@ public class AmusementPark extends Object implements Park{
     }
 
     public void addRide(Ride ride) throws WrongRideException{
-        rides.add(ride); 
-        //TODO: WrongRideException - message: "An amusement park can only have rollercoaster rides!"
+        if(ride instanceof Rollercoaster){
+            rides.add(ride); 
+        }
+        
+        else{
+            throw new WrongRideException("An amusement park can only have rollercoaster rides!");
+        }
     }
 
     public void close(){
@@ -94,7 +99,7 @@ public class AmusementPark extends Object implements Park{
 
     public void modifyRide(Ride ride, String newName, String newColor, int newMinHeight, int newMaxRides, boolean newSimulated){
         int theIndex = rides.indexOf(ride);
-        rides.set(theIndex, new Ride(newName, newColor, newMinHeight, newMaxRides, newSimulated));
+        rides.set(theIndex, new Rollercoaster(newName, newColor, newMinHeight, newMaxRides, newSimulated));
     }
 
     public void removeRide(Ride ride){
