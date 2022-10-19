@@ -34,7 +34,7 @@ public class Ride extends Object{
         return minHeight;
     }
 
-    public void getMaxRiders(){
+    public int getMaxRiders(){
         return maxRiders;
     }
 

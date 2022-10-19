@@ -16,8 +16,8 @@ public class Waterslide extends Ride{
 
     @Override
     public boolean equals(Object o){
-        if(o instanceof Ride){
-            if (name.equals(o.getName()) && color.equals(o.getColor()) && minHeight == o.getMinHeight() && maxRiders == o.getMaxRiders() && splashDepth == o.getSplashDepth()){
+        if(o instanceof Waterslide){
+            if (super.getName().equals(o.getName()) && super.getColor().equals(o.getColor()) && super.getMinHeight() == o.getMinHeight() && super.getMaxRiders() == o.getMaxRiders() && splashDepth == o.getSplashDepth()){
                 return true;
             }
 
