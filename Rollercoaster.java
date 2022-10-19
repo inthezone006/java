@@ -8,8 +8,9 @@ public class Rollercoaster extends Ride {
 
     @Override
     public boolean equals(Object o){
+        Rollercoaster b = (Rollercoaster) o;
         if(o instanceof Rollercoaster){
-            if (super.getName().equals(o.getName()) && super.getColor().equals(o.getColor()) && super.getMinHeight() == o.getMinHeight() && super.getMaxRiders() == o.getMaxRiders()){
+            if (super.getName().equals(b.getName()) && super.getColor().equals(b.getColor()) && super.getMinHeight() == b.getMinHeight() && super.getMaxRiders() == b.getMaxRiders()){
                 return true;
             }
 

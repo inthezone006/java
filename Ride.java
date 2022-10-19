@@ -44,8 +44,9 @@ public class Ride extends Object{
 
     @Override
     public boolean equals(Object o){
+        Ride b = (Ride) o;
         if(o instanceof Ride){
-            if (name.equals(o.getName()) && color.equals(o.getColor()) && minHeight == o.getMinHeight() && maxRiders == o.getMaxRiders()){
+            if (name.equals(b.getName()) && color.equals(b.getColor()) && minHeight == b.getMinHeight() && maxRiders == b.getMaxRiders()){
                 return true;
             }
 
