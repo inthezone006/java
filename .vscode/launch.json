@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch SimpleClient",
+            "request": "launch",
+            "mainClass": "SimpleClient",
+            "projectName": "java_459e2836"
+        },
+        {
+            "type": "java",
+            "name": "Launch SimpleServer",
+            "request": "launch",
+            "mainClass": "SimpleServer",
+            "projectName": "java_459e2836"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
