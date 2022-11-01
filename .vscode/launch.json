@@ -4,6 +4,14 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+    
+        {
+            "type": "java",
+            "name": "Launch OrderFormGUI",
+            "request": "launch",
+            "mainClass": "OrderFormGUI",
+            "projectName": "java_459e2836"
+        },
         {
             "type": "java",
             "name": "Launch UniversityCardGUI",
