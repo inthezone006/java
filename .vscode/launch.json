@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch UniversityCardGUI",
+            "request": "launch",
+            "mainClass": "UniversityCardGUI",
+            "projectName": "java_459e2836"
+        },
+        {
+            "type": "java",
+            "name": "Launch testclass",
+            "request": "launch",
+            "mainClass": "testclass",
+            "projectName": "java_459e2836"
+        },
+        {
+            "type": "java",
             "name": "Launch SimpleClient",
             "request": "launch",
             "mainClass": "SimpleClient",
