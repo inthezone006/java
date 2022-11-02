@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SearchClient",
+            "request": "launch",
+            "mainClass": "SearchClient",
+            "projectName": "java_8d95f8cc"
+        },
+        {
+            "type": "java",
+            "name": "Launch SearchServer",
+            "request": "launch",
+            "mainClass": "SearchServer",
+            "projectName": "java_8d95f8cc"
+        },
+        {
+            "type": "java",
             "name": "Launch SearchServer",
             "request": "launch",
             "mainClass": "SearchServer",
