@@ -42,10 +42,14 @@ public class SearchClient {
 
                     ArrayList<String> allTerms = new ArrayList<>();
                     String line = reader.readLine();
-                    while (line != null) {
+                    //System.out.println(line);
+                    //while (line != null) {
                         allTerms.add(line);
+                        System.out.println(line);
                         line = reader.readLine();
-                    }
+                        allTerms.add(line);
+                    //}
+                    //System.out.println("Exited!");
                     if (allTerms.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "No results found", "Client", JOptionPane.INFORMATION_MESSAGE); 
                     } else {

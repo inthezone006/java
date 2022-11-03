@@ -9,17 +9,19 @@ public class SearchServer {
         Socket socket = serverSocket.accept();
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter writer = new PrintWriter(socket.getOutputStream()); 
+        ArrayList<String> allLines = new ArrayList<>();
+        File myFile = new File("searchDatabase.txt");
+        FileReader fr = new FileReader(myFile);
+        BufferedReader bfr = new BufferedReader(fr);
+            
+        String line = bfr.readLine();
+        while (line != null) {
+            allLines.add(line);
+            line = bfr.readLine();
+        }
         while (true) {
             String message = reader.readLine();
-            File myFile = new File("searchDatabase.txt");
-            FileReader fr = new FileReader(myFile);
-            BufferedReader bfr = new BufferedReader(fr);
-            ArrayList<String> allLines = new ArrayList<>();
-            String line = bfr.readLine();
-            while (line != null) {
-                allLines.add(line);
-                line = bfr.readLine();
-            }
+            System.out.println(message);
             ArrayList<String> searchTerms = new ArrayList<>();
             for (int i = 0; i < allLines.size(); i++) {
                 if (allLines.get(i).contains(message)) {
@@ -32,14 +34,9 @@ public class SearchServer {
                 writer.println();
             }
             writer.flush();
-            writer.close();
-            reader.close();
-            if (line == null) {
-                serverSocket.close();
-            }
-        }
-
+        }  
         
+        //writer.close();
+        //reader.close();     
     }
-    
 }
