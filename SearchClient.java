@@ -41,15 +41,14 @@ public class SearchClient {
                     writer.flush();
 
                     ArrayList<String> allTerms = new ArrayList<>();
-                    String line = reader.readLine();
-                    //System.out.println(line);
-                    //while (line != null) {
-                        allTerms.add(line);
-                        System.out.println(line);
-                        line = reader.readLine();
-                        allTerms.add(line);
+                    String line1 = reader.readLine();
+                    String line2 = "";
+                    //while (line1.equals(line2) == false) {
+                        allTerms.add(line1);
+                        line2 = line1;
+                        //line1 = reader.readLine(); 
                     //}
-                    //System.out.println("Exited!");
+                    System.out.println("Exited!");
                     if (allTerms.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "No results found", "Client", JOptionPane.INFORMATION_MESSAGE); 
                     } else {

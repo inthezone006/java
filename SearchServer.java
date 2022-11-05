@@ -19,6 +19,7 @@ public class SearchServer {
             allLines.add(line);
             line = bfr.readLine();
         }
+        
         while (true) {
             String message = reader.readLine();
             System.out.println(message);
