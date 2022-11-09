@@ -34,8 +34,41 @@ public class SimplePaint extends JComponent implements Runnable{
             repaint();
         }
         g.drawImage(image, 0, 0, null);
-}
+    }
 
+    public SimplePaint() {
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                // set oldX and oldY coordinates to beginning mouse press
+                oldX = e.getX();
+                oldY = e.getY();
+            }
+        });
+
+
+        addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                // set current coordinates to where mouse is being dragged
+                curX = e.getX();
+                curY = e.getY();
+
+                // draw the line between old coordinates and new ones
+                graphics2D.drawLine(oldX, oldY, curX, curY);
+
+                // refresh frame and reset old coordinates
+                repaint();
+                oldX = curX;
+                oldY = curY;
+
+            }
+        });
+    }
+
+    public void draw(int size) {
+        graphics2D.setStroke(new BasicStroke(size));
+    }
 
     public void run() {
         JFrame frame = new JFrame("Simple Paint Walkthrough");
@@ -47,6 +80,22 @@ public class SimplePaint extends JComponent implements Runnable{
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
+        strTextField = new JTextField(10);
+        enterButton = new JButton("Enter");
+        JPanel panel = new JPanel();
+        panel.add(strTextField);
+        panel.add(enterButton);
+        content.add(panel, BorderLayout.NORTH);
+
+        enterButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+        
+                int size = Integer.valueOf(strTextField.getText());
+        
+                paint.draw(size);
+        
+            }
+        });
     }
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new SimplePaint());
