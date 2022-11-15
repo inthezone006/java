@@ -1,6 +1,5 @@
 import javax.swing.*; 
 import java.awt.*; 
-import java.awt.event.*; 
 
 public class SimplePaint extends JComponent implements Runnable{
 
