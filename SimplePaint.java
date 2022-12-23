@@ -1,5 +1,6 @@
 import javax.swing.*; 
-import java.awt.*; 
+import java.awt.*;
+import java.awt.event.*;
 
 public class SimplePaint extends JComponent implements Runnable{
 
@@ -89,10 +90,13 @@ public class SimplePaint extends JComponent implements Runnable{
         enterButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
         
-                int size = Integer.valueOf(strTextField.getText());
-        
-                paint.draw(size);
-        
+                try {
+                    int size = Integer.valueOf(strTextField.getText());
+                    paint.draw(size);
+                } catch (Exception b) {
+                    JOptionPane.showMessageDialog(frame, "Invalid brush size!", "Simple Paint Walkthrough", JOptionPane.ERROR_MESSAGE);
+                }
+                
             }
         });
     }
