@@ -4,16 +4,12 @@
 			"path": "."
 		},
 		{
-			"name": "html5",
-			"path": "../html5"
-		},
-		{
 			"name": "python",
 			"path": "../python"
 		},
 		{
-			"name": "inthezone006.github.io",
-			"path": "../inthezone006.github.io"
+			"name": "html5",
+			"path": "../html5"
 		}
 	],
 	"settings": {}
