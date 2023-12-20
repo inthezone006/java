@@ -119,9 +119,9 @@ public class Paint extends JComponent implements Runnable{
 
     public int[] randomCanvas() {
         Random random = new Random();
-        int red = random.nextInt(0, 256);
-        int green = random.nextInt(0, 256);
-        int blue = random.nextInt(0, 256);
+        int red = random.nextInt(256);
+        int green = random.nextInt(256);
+        int blue = random.nextInt(256);
         Color rgbColor = new Color(red, green, blue);
         graphics2D.setPaint(rgbColor);
         repaint();

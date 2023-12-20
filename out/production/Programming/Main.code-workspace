@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "python",
+			"path": "../python"
+		},
+		{
+			"name": "html5",
+			"path": "../html5"
+		}
+	],
+	"settings": {}
+}
